@@ -1,0 +1,45 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Контакты — KAFOLAT PLAST</title><link rel="stylesheet" href="../shared.css"></head><body><header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="../">
+      <img src="../assets/logo.png" alt="KAFOLAT PLAST">
+      <span class="brand-kafolat">KAFOLAT</span><span class="brand-plast">PLAST</span>
+    </a>
+    <nav class="navlinks">
+      <a href="../" data-ru="Главная" data-uz="Bosh sahifa" data-en="Home">Главная</a>
+      <a href="../about/" data-ru="О компании" data-uz="Kompaniya haqida" data-en="About us">О компании</a>
+      <a href="../productions/" data-ru="Продукция" data-uz="Mahsulotlar" data-en="Products">Продукция</a>
+      <a href="../advantages/" data-ru="Преимущества" data-uz="Afzalliklar" data-en="Advantages">Преимущества</a>
+      <a href="../contacts/" data-ru="Контакты" data-uz="Aloqa" data-en="Contacts">Контакты</a>
+    </nav>
+    <div class="actions">
+      <label class="language-picker" aria-label="Выбор языка">
+        <span class="language-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.4 2.5 3.6 5.5 3.6 9S14.4 18.5 12 21c-2.4-2.5-3.6-5.5-3.6-9S9.6 5.5 12 3Z"></path></svg></span>
+        <select class="lang" id="languageSelect" aria-label="Language"><option value="ru">RU</option><option value="uz">UZ</option><option value="en">EN</option></select>
+      </label>
+      <a class="btn primary" href="../contacts/" data-ru="Связаться" data-uz="Bog‘lanish" data-en="Contact us">Связаться</a>
+      <button class="menu" id="menuToggle" type="button" aria-label="Открыть меню" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"></path></svg></button>
+    </div>
+  </div>
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="../" data-ru="Главная" data-uz="Bosh sahifa" data-en="Home">Главная</a>
+    <a href="../about/" data-ru="О компании" data-uz="Kompaniya haqida" data-en="About us">О компании</a>
+    <a href="../productions/" data-ru="Продукция" data-uz="Mahsulotlar" data-en="Products">Продукция</a>
+    <a href="../advantages/" data-ru="Преимущества" data-uz="Afzalliklar" data-en="Advantages">Преимущества</a>
+    <a href="../contacts/" data-ru="Контакты" data-uz="Aloqa" data-en="Contacts">Контакты</a>
+  </nav>
+</header><main><section class="page-hero"><div class="container"><div class="eyebrow">KAFOLAT PLAST / CONTACTS</div><h1><span>Давайте</span><br>обсудим<br>проект.</h1><p data-ru="Обсудим вашу задачу и подберём упаковку, которая соответствует продукту, объёму и требованиям бренда." data-en="Let’s discuss your needs and find packaging that fits your product, volume and brand requirements." data-uz="Vazifangizni muhokama qilamiz va mahsulotingiz, hajmingiz hamda brendingiz talablariga mos qadoqni tanlaymiz.">Обсудим вашу задачу и подберём упаковку, которая соответствует продукту, объёму и требованиям бренда.</p></div></section><section class="section"><div class="container split"><div><div class="eyebrow">Свяжитесь с нами</div><h2>Расскажите<br>о вашей задаче.</h2><p>Оставьте запрос, и мы поможем подобрать подходящую упаковку и комплектующие.</p><div class="checklist"><div class="check"><div class="iconbox">✉</div><div><b>Email</b><p>info@kafolatplast.uz</p></div></div><div class="check"><div class="iconbox">⌖</div><div><b>Адрес</b><p>Ташкент, Узбекистан</p></div></div><div class="check"><div class="iconbox">◷</div><div><b>График</b><p>Пн–Пт, 09:00–18:00</p></div></div></div></div><div class="card soft"><h3>Начать диалог</h3><p style="margin-bottom:24px">Напишите нам, чтобы обсудить ассортимент, объёмы и условия сотрудничества.</p><a class="btn primary" href="mailto:info@kafolatplast.uz">Написать на email →</a></div></div></section></main><footer class="footer"><div class="container footerrow"><span>© 2026 KAFOLAT PLAST. Все права защищены.</span><span>Пластиковые решения для бизнеса</span></div></footer><script>
+(function(){
+  const select=document.getElementById('languageSelect');
+  const menu=document.getElementById('menuToggle');
+  const mobile=document.getElementById('mobileNav');
+  let lang=localStorage.getItem('kp-lang')||'ru';
+  function applyLang(){
+    document.documentElement.lang=lang;
+    document.querySelectorAll('[data-ru]').forEach(el=>{el.textContent=el.dataset[lang]||el.dataset.ru;});
+    if(select) select.value=lang;
+  }
+  if(select) select.addEventListener('change',()=>{lang=select.value;localStorage.setItem('kp-lang',lang);applyLang();});
+  if(menu&&mobile){menu.addEventListener('click',()=>{const open=mobile.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));});}
+  applyLang();
+})();
+</script></body></html>

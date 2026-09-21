@@ -1,0 +1,45 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>О компании — KAFOLAT PLAST</title><link rel="stylesheet" href="../shared.css"></head><body><header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="../">
+      <img src="../assets/logo.png" alt="KAFOLAT PLAST">
+      <span class="brand-kafolat">KAFOLAT</span><span class="brand-plast">PLAST</span>
+    </a>
+    <nav class="navlinks">
+      <a href="../" data-ru="Главная" data-uz="Bosh sahifa" data-en="Home">Главная</a>
+      <a href="../about/" data-ru="О компании" data-uz="Kompaniya haqida" data-en="About us">О компании</a>
+      <a href="../productions/" data-ru="Продукция" data-uz="Mahsulotlar" data-en="Products">Продукция</a>
+      <a href="../advantages/" data-ru="Преимущества" data-uz="Afzalliklar" data-en="Advantages">Преимущества</a>
+      <a href="../contacts/" data-ru="Контакты" data-uz="Aloqa" data-en="Contacts">Контакты</a>
+    </nav>
+    <div class="actions">
+      <label class="language-picker" aria-label="Выбор языка">
+        <span class="language-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.4 2.5 3.6 5.5 3.6 9S14.4 18.5 12 21c-2.4-2.5-3.6-5.5-3.6-9S9.6 5.5 12 3Z"></path></svg></span>
+        <select class="lang" id="languageSelect" aria-label="Language"><option value="ru">RU</option><option value="uz">UZ</option><option value="en">EN</option></select>
+      </label>
+      <a class="btn primary" href="../contacts/" data-ru="Связаться" data-uz="Bog‘lanish" data-en="Contact us">Связаться</a>
+      <button class="menu" id="menuToggle" type="button" aria-label="Открыть меню" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"></path></svg></button>
+    </div>
+  </div>
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="../" data-ru="Главная" data-uz="Bosh sahifa" data-en="Home">Главная</a>
+    <a href="../about/" data-ru="О компании" data-uz="Kompaniya haqida" data-en="About us">О компании</a>
+    <a href="../productions/" data-ru="Продукция" data-uz="Mahsulotlar" data-en="Products">Продукция</a>
+    <a href="../advantages/" data-ru="Преимущества" data-uz="Afzalliklar" data-en="Advantages">Преимущества</a>
+    <a href="../contacts/" data-ru="Контакты" data-uz="Aloqa" data-en="Contacts">Контакты</a>
+  </nav>
+</header><main><section class="page-hero"><div class="container"><div class="eyebrow">KAFOLAT PLAST / ABOUT</div><h1><span>Больше, чем</span><br>упаковка</h1><p data-ru="Мы создаём пластиковые решения, которые помогают брендам выглядеть профессионально, работать стабильно и развиваться быстрее." data-en="We create plastic solutions that help brands look professional, operate consistently and grow faster." data-uz="Biz brendlarga professional ko‘rinish, barqarorlik va tezroq rivojlanishga yordam beradigan plastik yechimlarni yaratamiz.">Мы создаём пластиковые решения, которые помогают брендам выглядеть профессионально, работать стабильно и развиваться быстрее.</p></div></section><section class="section"><div class="container split"><div><div class="eyebrow">Наша философия</div><h2>Создаём решения<br>для реального бизнеса.</h2><p>Мы объединяем практичный дизайн, производственную дисциплину и контроль качества, чтобы каждая деталь соответствовала задаче клиента.</p></div><div class="grid" style="grid-template-columns:1fr 1fr"><div class="card soft"><div class="number">10+</div><p>лет на рынке</p></div><div class="card soft"><div class="number">100+</div><p>видов продукции</p></div><div class="card soft"><div class="number">1000+</div><p>довольных клиентов</p></div><div class="card soft"><div class="number">360°</div><p>подход к проекту</p></div></div></div></section><section class="section" style="background:#fafafa"><div class="container"><div class="section-head"><div><div class="eyebrow">Как мы работаем</div><h2>От идеи<br>до готового изделия.</h2></div><p>Прозрачный процесс помогает сокращать сроки и получать предсказуемый результат.</p></div><div class="grid"><div class="card"><div class="number">01</div><h3>Задача</h3><p>Изучаем продукт, требования к упаковке и особенности использования.</p></div><div class="card"><div class="number">02</div><h3>Решение</h3><p>Подбираем форму, объём, цвет и необходимые комплектующие.</p></div><div class="card"><div class="number">03</div><h3>Результат</h3><p>Согласовываем детали и обеспечиваем стабильное производство.</p></div></div></div></section></main><footer class="footer"><div class="container footerrow"><span>© 2026 KAFOLAT PLAST. Все права защищены.</span><span>Пластиковые решения для бизнеса</span></div></footer><script>
+(function(){
+  const select=document.getElementById('languageSelect');
+  const menu=document.getElementById('menuToggle');
+  const mobile=document.getElementById('mobileNav');
+  let lang=localStorage.getItem('kp-lang')||'ru';
+  function applyLang(){
+    document.documentElement.lang=lang;
+    document.querySelectorAll('[data-ru]').forEach(el=>{el.textContent=el.dataset[lang]||el.dataset.ru;});
+    if(select) select.value=lang;
+  }
+  if(select) select.addEventListener('change',()=>{lang=select.value;localStorage.setItem('kp-lang',lang);applyLang();});
+  if(menu&&mobile){menu.addEventListener('click',()=>{const open=mobile.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));});}
+  applyLang();
+})();
+</script></body></html>
