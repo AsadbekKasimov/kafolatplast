@@ -1,4 +1,4 @@
-<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Преимущества — KAFOLAT PLAST</title><link rel="stylesheet" href="../shared.css"></head><body><header class="site-header">
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Преимущества — KAFOLAT PLAST</title><link rel="stylesheet" href="../shared.css?v=2"></head><body><header class="site-header">
   <div class="container nav">
     <a class="brand" href="../">
       <img src="../assets/logo.png" alt="KAFOLAT PLAST">
@@ -32,13 +32,29 @@
   const select=document.getElementById('languageSelect');
   const menu=document.getElementById('menuToggle');
   const mobile=document.getElementById('mobileNav');
-  let lang=localStorage.getItem('kp-lang')||'ru';
+  let lang=localStorage.getItem('kafolat-lang')||'ru';
   function applyLang(){
     document.documentElement.lang=lang;
     document.querySelectorAll('[data-ru]').forEach(el=>{el.textContent=el.dataset[lang]||el.dataset.ru;});
     if(select) select.value=lang;
+    const titles = {
+      ru: 'О компании — KAFOLAT PLAST',
+      uz: 'Kompaniya haqida — KAFOLAT PLAST',
+      en: 'About us — KAFOLAT PLAST'
+    };
+    if (document.title) {
+      const path = location.pathname;
+      const titleMap = path.includes('/productions/') ? {
+        ru: 'Продукция — KAFOLAT PLAST', uz: 'Mahsulotlar — KAFOLAT PLAST', en: 'Products — KAFOLAT PLAST'
+      } : path.includes('/advantages/') ? {
+        ru: 'Преимущества — KAFOLAT PLAST', uz: 'Afzalliklar — KAFOLAT PLAST', en: 'Advantages — KAFOLAT PLAST'
+      } : path.includes('/contacts/') ? {
+        ru: 'Контакты — KAFOLAT PLAST', uz: 'Aloqa — KAFOLAT PLAST', en: 'Contacts — KAFOLAT PLAST'
+      } : titles;
+      document.title = titleMap[lang] || titleMap.ru;
+    }
   }
-  if(select) select.addEventListener('change',()=>{lang=select.value;localStorage.setItem('kp-lang',lang);applyLang();});
+  if(select) select.addEventListener('change',()=>{lang=select.value;localStorage.setItem('kafolat-lang',lang);applyLang();});
   if(menu&&mobile){menu.addEventListener('click',()=>{const open=mobile.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));});}
   applyLang();
 })();
