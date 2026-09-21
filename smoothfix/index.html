@@ -37,6 +37,8 @@
     nav { display:flex; gap:26px; font-size:14px; }
     nav a:hover { color:var(--red); }
     .actions { display:flex; align-items:center; gap:12px; }
+    .contact-btn { gap:8px; }
+    .contact-icon { width:17px; height:17px; fill:none; stroke:currentColor; stroke-width:1.9; stroke-linecap:round; stroke-linejoin:round; flex:0 0 auto; }
     .lang { border:0; background:transparent; font-weight:600; }
     .btn {
       display:inline-flex; align-items:center; justify-content:center; gap:12px;
@@ -100,6 +102,7 @@
     .contact .btn { border-color:white; background:white; color:var(--red); }
     footer { padding:34px 0; border-top:1px solid var(--line); color:#777; font-size:13px; }
     .footer-row { display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap; }
+    @media(max-width:600px) { .contact-btn { width:42px; height:42px; padding:0 !important; border-radius:50%; justify-content:center; } .contact-btn .contact-label { display:none; } .contact-btn .contact-icon { width:18px; height:18px; } }
     @media(max-width:980px) {
       nav { display:none; }
       .menu { display:block; }
@@ -144,7 +147,7 @@
       <a href="#home" data-i18n="navHome">Главная</a><a href="#about" data-i18n="navAbout">О компании</a><a href="#products" data-i18n="navProducts">Продукция</a>
       <a href="#advantages" data-i18n="navAdvantages">Преимущества</a><a href="#contacts" data-i18n="navContacts">Контакты</a>
     </nav>
-    <div class="actions"><select class="lang" id="languageSelect" aria-label="Language"><option value="ru">RU</option><option value="uz">UZ</option><option value="en">EN</option></select><a class="btn primary" href="#contacts" data-i18n="contactBtn">Связаться ↗</a><button class="menu" onclick="alert('Откройте меню через разделы страницы')">☰</button></div>
+    <div class="actions"><select class="lang" id="languageSelect" aria-label="Language"><option value="ru">RU</option><option value="uz">UZ</option><option value="en">EN</option></select><a class="btn primary contact-btn" href="#contacts" data-i18n="contactBtn" title="Связаться"><span class="contact-label" data-i18n="contactBtn">Связаться</span><svg class="contact-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.2 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.63a2 2 0 0 1-.45 2.11L8 9.73a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.85.29 1.73.5 2.63.62A2 2 0 0 1 22 16.92Z"></path></svg></a><button class="menu" onclick="alert('Откройте меню через разделы страницы')">☰</button></div>
   </div>
 </header>
 
