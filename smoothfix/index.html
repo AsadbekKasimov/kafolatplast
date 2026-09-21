@@ -36,12 +36,8 @@
     
     nav { display:flex; gap:26px; font-size:14px; }
     nav a:hover { color:var(--red); }
-    .actions { display:flex; align-items:center; gap:12px; flex-shrink:0; }
-    .mobile-nav { display:none; }
-    .language-picker { display:flex; align-items:center; gap:7px; }
-    .language-icon { width:18px; height:18px; color:#555; flex:0 0 18px; }
-    .language-icon svg { width:100%; height:100%; stroke:currentColor; stroke-width:1.8; fill:none; stroke-linecap:round; stroke-linejoin:round; }
-    .lang { border:0; background:transparent; font-weight:600; cursor:pointer; color:var(--ink); padding:6px 2px; }
+    .actions { display:flex; align-items:center; gap:12px; }
+    .lang { border:0; background:transparent; font-weight:600; }
     .btn {
       display:inline-flex; align-items:center; justify-content:center; gap:12px;
       border:1px solid var(--red); border-radius:999px; padding:15px 24px;
@@ -51,21 +47,17 @@
     .btn.primary:hover { background:var(--red-dark); transform:translateY(-2px); }
     .btn.ghost { background:#fff; color:var(--red); }
     .btn.ghost:hover { background:#fff4f4; }
-    .menu { display:none; width:42px; height:42px; border:1px solid #ececec; border-radius:14px; background:#fff; color:var(--ink); align-items:center; justify-content:center; cursor:pointer; transition:.2s; }
-    .menu:hover { border-color:var(--red); color:var(--red); }
-    .menu svg { width:22px; height:22px; stroke:currentColor; stroke-width:2; fill:none; stroke-linecap:round; stroke-linejoin:round; }
-    .hero { min-height:650px; display:grid; grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr); align-items:center; gap:clamp(16px,3vw,48px); padding:clamp(42px,7vw,72px) 0 40px; }
-    .hero > div:first-child { min-width:0; }
+    .menu { display:none; border:0; background:transparent; font-size:26px; }
+    .hero { min-height:650px; display:grid; grid-template-columns: .9fr 1.1fr; align-items:center; gap:20px; padding:72px 0 40px; }
     .eyebrow { color:#999; text-transform:uppercase; letter-spacing:5px; font-size:12px; font-weight:700; }
     h1 { font-size:clamp(48px, 7vw, 94px); line-height:.94; letter-spacing:-5px; margin:24px 0; }
     h1 span, .red { color:var(--red); }
-    .lead { max-width:520px; font-size:clamp(16px,1.5vw,18px); line-height:1.55; color:#666; }
-    .hero-buttons .btn { white-space:nowrap; }
+    .lead { max-width:480px; font-size:18px; line-height:1.55; color:#666; }
     .hero-buttons { display:flex; gap:12px; flex-wrap:wrap; margin-top:30px; }
     .stats { display:flex; gap:34px; margin-top:46px; flex-wrap:wrap; }
     .stat strong { display:block; font-size:34px; letter-spacing:-1px; }
     .stat span { color:#888; font-size:13px; }
-    .hero-visual { min-height:560px; min-width:0; position:relative; display:flex; align-items:center; justify-content:center; overflow:hidden; }
+    .hero-visual { min-height:560px; position:relative; display:flex; align-items:center; justify-content:center; overflow:hidden; }
     .orb { position:absolute; width:500px; height:500px; border-radius:50%; background:radial-gradient(circle at 35% 30%, #fff, #f2f2f2 65%, #eaeaea); }
     .product-carousel { position:relative; width:100%; height:560px; isolation:isolate; perspective:1100px; touch-action:pan-y; user-select:none; cursor:grab; }
     .product-carousel.is-dragging { cursor:grabbing; }
@@ -108,39 +100,10 @@
     .contact .btn { border-color:white; background:white; color:var(--red); }
     footer { padding:34px 0; border-top:1px solid var(--line); color:#777; font-size:13px; }
     .footer-row { display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap; }
-
-    .language-modal { position:fixed; inset:0; z-index:1000; display:flex; align-items:center; justify-content:center; padding:20px; background:rgba(16,16,16,.45); backdrop-filter:blur(10px); opacity:1; visibility:visible; transition:opacity .3s ease, visibility .3s ease; }
-    .language-modal.hidden { opacity:0; visibility:hidden; pointer-events:none; }
-    .language-dialog { width:min(460px,100%); background:#fff; border-radius:28px; padding:34px; box-shadow:0 24px 90px rgba(0,0,0,.2); text-align:center; transform:translateY(0) scale(1); transition:transform .3s ease; }
-    .language-modal.hidden .language-dialog { transform:translateY(12px) scale(.98); }
-    .language-mark { width:78px; height:78px; margin:0 auto 18px; display:grid; place-items:center; }
-    .language-mark img { width:78px; height:78px; object-fit:contain; display:block; }
-    .language-dialog h2 { font-size:clamp(26px,5vw,34px); letter-spacing:-1.5px; line-height:1.05; margin:0 0 10px; }
-    .language-dialog p { margin:0 0 24px; color:#777; line-height:1.5; font-size:15px; }
-    .language-options { display:grid; gap:10px; }
-    .language-option { width:100%; border:1px solid #e8e8e8; background:#fff; border-radius:16px; padding:15px 18px; display:flex; align-items:center; justify-content:space-between; gap:14px; font:inherit; font-weight:750; cursor:pointer; transition:background .2s, border-color .2s, transform .2s; }
-    .language-option:hover { border-color:var(--red); background:#fff5f5; transform:translateY(-1px); }
-    .language-option span:last-child { color:var(--red); font-size:20px; }
-    body.modal-open { overflow:hidden; }
-
-    .contact-btn { gap:8px; }
-    .contact-icon { width:17px; height:17px; fill:none; stroke:currentColor; stroke-width:1.9; stroke-linecap:round; stroke-linejoin:round; flex:0 0 auto; }
-    @media(max-width:600px) { .contact-btn { width:42px; height:42px; padding:0 !important; border-radius:50%; } .contact-btn .contact-label { display:none; } .contact-btn .contact-icon { width:18px; height:18px; } }
-    @media(max-width:600px) { .language-dialog { padding:26px 20px; border-radius:24px; } }
-
     @media(max-width:980px) {
       nav { display:none; }
-      .menu { display:inline-flex; }
-      .nav { gap:14px; }
-      .brand { min-width:0; }
-      .brand-kafolat, .brand-plast { font-size:20px; }
-      .mobile-nav { position:absolute; top:calc(100% + 1px); left:0; right:0; display:none; padding:14px 20px 20px; background:rgba(255,255,255,.98); border-bottom:1px solid var(--line); box-shadow:0 14px 30px rgba(0,0,0,.06); }
-      .mobile-nav.open { display:grid; gap:4px; }
-      .mobile-nav a { padding:14px 12px; border-radius:12px; font-size:15px; font-weight:600; }
-      .mobile-nav a:hover { background:#fff3f3; color:var(--red); }
+      .menu { display:block; }
       .hero { grid-template-columns:1fr; padding-top:45px; }
-      .hero-visual { order:2; }
-      .hero > div:first-child { order:1; }
       .hero-visual { min-height:440px; }
       .categories { grid-template-columns:repeat(2,1fr); }
       .category:last-child { grid-column:span 2; }
@@ -151,11 +114,9 @@
       .nav { height:70px; }
       .brand img { width:34px; height:34px; flex-basis:34px; }
       .brand-kafolat, .brand-plast { font-size:18px; padding:7px 8px; }
-      .language-picker { display:none; }
-      .actions .btn.primary { padding:12px 16px; font-size:13px; }
+      .actions .lang { display:none; }
       h1 { letter-spacing:-3px; }
-      .hero-visual { min-height:330px; width:100%; }
-      .orb { max-width:88vw; max-height:88vw; }
+      .hero-visual { min-height:330px; }
       .product-carousel { height:350px; }
       .carousel-item { width:205px; height:330px; }
       .carousel-controls { gap:14px; }
@@ -170,42 +131,9 @@
       .contact { padding:30px; display:block; }
       .contact .btn { margin-top:24px; }
     }
-
-    @media(max-width:420px) {
-      .container { width:calc(100% - 24px); }
-      .nav { height:66px; gap:7px; }
-      .brand { gap:5px; }
-      .brand img { width:29px; height:29px; flex-basis:29px; }
-      .brand-kafolat, .brand-plast { font-size:15px; letter-spacing:-.7px; padding:6px 6px; }
-      .actions { gap:6px; }
-      .actions .btn.primary { padding:11px 13px; font-size:12px; }
-      .menu { width:38px; height:38px; border-radius:12px; }
-      .menu svg { width:20px; height:20px; }
-      h1 { font-size:clamp(43px,12vw,56px); letter-spacing:-2.5px; }
-      .eyebrow { letter-spacing:3.5px; font-size:10px; }
-      .lead { font-size:16px; }
-      .hero-buttons { gap:10px; }
-      .hero-buttons .btn { padding:13px 15px; font-size:13px; }
-      .stat strong { font-size:30px; }
-      .stat span { font-size:12px; }
-    }
   </style>
 </head>
-<body class="modal-open">
-
-<div class="language-modal" id="languageModal" role="dialog" aria-modal="true" aria-labelledby="languageModalTitle">
-  <div class="language-dialog">
-    <div class="language-mark"><img src="assets/logo.png" alt="KAFOLAT PLAST" /></div>
-    <h2 id="languageModalTitle">Выберите язык · Tilni tanlang · Choose your language</h2>
-    <p id="languageModalSubtitle">Выберите удобный язык для просмотра сайта.</p>
-    <div class="language-options">
-      <button class="language-option" type="button" data-modal-lang="ru"><span>🇷🇺 Русский</span><span>→</span></button>
-      <button class="language-option" type="button" data-modal-lang="uz"><span>🇺🇿 O‘zbekcha</span><span>→</span></button>
-      <button class="language-option" type="button" data-modal-lang="en"><span>🇬🇧 English</span><span>→</span></button>
-    </div>
-  </div>
-</div>
-
+<body>
 <header>
   <div class="container nav">
     <a class="brand" href="#">
@@ -213,12 +141,11 @@
       <span class="brand-kafolat">KAFOLAT</span><span class="brand-plast">PLAST</span>
     </a>
     <nav>
-      <a href="./" data-i18n="navHome">Главная</a><a href="about/" data-i18n="navAbout">О компании</a><a href="productions/" data-i18n="navProducts">Продукция</a>
-      <a href="advantages/" data-i18n="navAdvantages">Преимущества</a><a href="contacts/" data-i18n="navContacts">Контакты</a>
+      <a href="#home" data-i18n="navHome">Главная</a><a href="#about" data-i18n="navAbout">О компании</a><a href="#products" data-i18n="navProducts">Продукция</a>
+      <a href="#advantages" data-i18n="navAdvantages">Преимущества</a><a href="#contacts" data-i18n="navContacts">Контакты</a>
     </nav>
-    <div class="actions"><div class="language-picker" aria-label="Выбор языка"><span class="language-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.4 2.5 3.6 5.5 3.6 9S14.4 18.5 12 21c-2.4-2.5-3.6-5.5-3.6-9S9.6 5.5 12 3Z"></path></svg></span><select class="lang" id="languageSelect" aria-label="Language"><option value="ru">RU</option><option value="uz">UZ</option><option value="en">EN</option></select></div><a class="btn primary contact-btn" href="contacts/" data-i18n-title="contactBtn" title="Связаться"><span class="contact-label" data-i18n="contactBtn">Связаться</span><svg class="contact-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.2 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.63a2 2 0 0 1-.45 2.11L8 9.73a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.85.29 1.73.5 2.63.62A2 2 0 0 1 22 16.92Z"></path></svg></a><button class="menu" id="menuToggle" type="button" aria-label="Открыть меню" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button></div>
+    <div class="actions"><select class="lang" id="languageSelect" aria-label="Language"><option value="ru">RU</option><option value="uz">UZ</option><option value="en">EN</option></select><a class="btn primary" href="#contacts" data-i18n="contactBtn">Связаться ↗</a><button class="menu" onclick="alert('Откройте меню через разделы страницы')">☰</button></div>
   </div>
-  <div class="mobile-nav" id="mobileNav"><a href="./" data-i18n="navHome">Главная</a><a href="about/" data-i18n="navAbout">О компании</a><a href="productions/" data-i18n="navProducts">Продукция</a><a href="advantages/" data-i18n="navAdvantages">Преимущества</a><a href="contacts/" data-i18n="navContacts">Контакты</a></div>
 </header>
 
 <main>
@@ -227,7 +154,7 @@
     <div class="eyebrow" data-i18n="eyebrow">Пластиковые решения для бизнеса</div>
     <h1><span data-i18n="h1a">Качество</span><br><span data-i18n="h1b">в каждой</span><br><span data-i18n="h1c" style="color:var(--ink)">детали</span></h1>
     <p class="lead" data-i18n="lead">Производим пластиковую тару и комплектующие для бытовой химии, косметики, пищевой и других отраслей.</p>
-    <div class="hero-buttons"><a class="btn primary" href="productions/" data-i18n="viewProducts">Смотреть продукцию →</a><a class="btn ghost" href="about/" data-i18n="aboutBtn">О компании</a></div>
+    <div class="hero-buttons"><a class="btn primary" href="#products" data-i18n="viewProducts">Смотреть продукцию →</a><a class="btn ghost" href="#about" data-i18n="aboutBtn">О компании</a></div>
     <div class="stats">
       <div class="stat"><strong>10+</strong><span data-i18n="years">лет на рынке</span></div>
       <div class="stat"><strong>100+</strong><span data-i18n="types">видов продукции</span></div>
@@ -262,11 +189,11 @@
       <p data-i18n="productsLead">Практичные и эстетичные решения для производителей бытовой химии, косметики и других товаров.</p>
     </div>
     <div class="categories">
-      <a class="category" href="contacts/"><h3 data-i18n="catPet">ПЭТ тара</h3><p data-i18n="catPetDesc">Бутылки, банки, флаконы разных форм и объёмов</p><span class="circle-arrow">↗</span><img src="assets/red-bottle.png" alt=""></a>
-      <a class="category" href="contacts/"><h3 data-i18n="catCaps">Крышки</h3><p data-i18n="catCapsDesc">Надёжные решения для любых задач</p><span class="circle-arrow">↗</span><img src="assets/pump-line.jpeg" alt=""></a>
-      <a class="category" href="contacts/"><h3 data-i18n="catPumps">Дозаторы</h3><p data-i18n="catPumpsDesc">Удобство и функциональность</p><span class="circle-arrow">↗</span><img src="assets/dispenser.png" alt=""></a>
-      <a class="category" href="contacts/"><h3 data-i18n="catTriggers">Триггеры</h3><p data-i18n="catTriggersDesc">Для бытовой и профессиональной химии</p><span class="circle-arrow">↗</span><img src="assets/triggers.png" alt=""></a>
-      <a class="category" href="contacts/"><h3 data-i18n="catCanisters">Канистры</h3><p data-i18n="catCanistersDesc">Для хранения и транспортировки</p><span class="circle-arrow">↗</span><img src="assets/canister.png" alt=""></a>
+      <a class="category" href="#contacts"><h3 data-i18n="catPet">ПЭТ тара</h3><p data-i18n="catPetDesc">Бутылки, банки, флаконы разных форм и объёмов</p><span class="circle-arrow">↗</span><img src="assets/red-bottle.png" alt=""></a>
+      <a class="category" href="#contacts"><h3 data-i18n="catCaps">Крышки</h3><p data-i18n="catCapsDesc">Надёжные решения для любых задач</p><span class="circle-arrow">↗</span><img src="assets/pump-line.jpeg" alt=""></a>
+      <a class="category" href="#contacts"><h3 data-i18n="catPumps">Дозаторы</h3><p data-i18n="catPumpsDesc">Удобство и функциональность</p><span class="circle-arrow">↗</span><img src="assets/dispenser.png" alt=""></a>
+      <a class="category" href="#contacts"><h3 data-i18n="catTriggers">Триггеры</h3><p data-i18n="catTriggersDesc">Для бытовой и профессиональной химии</p><span class="circle-arrow">↗</span><img src="assets/triggers.png" alt=""></a>
+      <a class="category" href="#contacts"><h3 data-i18n="catCanisters">Канистры</h3><p data-i18n="catCanistersDesc">Для хранения и транспортировки</p><span class="circle-arrow">↗</span><img src="assets/canister.png" alt=""></a>
     </div>
   </div>
 </section>
@@ -277,7 +204,7 @@
       <div class="eyebrow" data-i18n="aboutEyebrow">О компании</div>
       <h2><span data-i18n="moreThan">Больше, чем</span><br><span class="red" data-i18n="packaging">упаковка</span></h2>
       <p data-i18n="aboutText">KAFOLAT PLAST объединяет современные технологии, контроль качества и практичный дизайн, чтобы создавать пластиковые изделия, которым доверяют.</p>
-      <a class="btn primary" href="contacts/" data-i18n="discuss">Обсудить проект →</a>
+      <a class="btn primary" href="#contacts" data-i18n="discuss">Обсудить проект →</a>
     </div>
     <div class="feature-grid" id="advantages">
       <div class="feature"><div class="icon">◇</div><b data-i18n="feature1">Высокое качество</b><p data-i18n="feature1d">Контроль качества на каждом этапе производства.</p></div>
@@ -303,30 +230,13 @@
 <script>
 (() => {
   const translations = {
-    ru: {navHome:'Главная',navAbout:'О компании',navProducts:'Продукция',navAdvantages:'Преимущества',navContacts:'Контакты',contactBtn:'Связаться',eyebrow:'Пластиковые решения для бизнеса',h1a:'Качество',h1b:'в каждой',h1c:'детали',lead:'Производим пластиковую тару и комплектующие для бытовой химии, косметики, пищевой и других отраслей.',viewProducts:'Смотреть продукцию →',aboutBtn:'О компании',years:'лет на рынке',types:'видов продукции',clients:'довольных клиентов',assortment:'Наш ассортимент',productsTitle:'Продукция',productsLead:'Практичные и эстетичные решения для производителей бытовой химии, косметики и других товаров.',catPet:'ПЭТ тара',catPetDesc:'Бутылки, банки, флаконы разных форм и объёмов',catCaps:'Крышки',catCapsDesc:'Надёжные решения для любых задач',catPumps:'Дозаторы',catPumpsDesc:'Удобство и функциональность',catTriggers:'Триггеры',catTriggersDesc:'Для бытовой и профессиональной химии',catCanisters:'Канистры',catCanistersDesc:'Для хранения и транспортировки',aboutEyebrow:'О компании',moreThan:'Больше, чем',packaging:'упаковка',aboutText:'KAFOLAT PLAST объединяет современные технологии, контроль качества и практичный дизайн, чтобы создавать пластиковые изделия, которым доверяют.',discuss:'Обсудить проект →',feature1:'Высокое качество',feature1d:'Контроль качества на каждом этапе производства.',feature2:'Современные технологии',feature2d:'Оборудование и производственные процессы для стабильного результата.',feature3:'Индивидуальные решения',feature3d:'Подбор формы, цвета и комплектующих под задачу клиента.',feature4:'Долгосрочное сотрудничество',feature4d:'Ориентируемся на качество, сроки и потребности партнёров.',contactEyebrow:'Начнём сотрудничество',contactTitle1:'Создадим упаковку',contactTitle2:'для вашего продукта.',writeUs:'Написать нам ↗',copyright:'© 2026 KAFOLAT PLAST. Все права защищены.'},
-    uz: {navHome:'Bosh sahifa',navAbout:'Kompaniya haqida',navProducts:'Mahsulotlar',navAdvantages:'Afzalliklar',navContacts:'Aloqa',contactBtn:'Bog‘lanish',eyebrow:'Biznes uchun plastik yechimlar',h1a:'Har bir',h1b:'detalda',h1c:'sifat',lead:'Maishiy kimyo, kosmetika, oziq-ovqat va boshqa sohalar uchun plastik idishlar hamda butlovchi qismlar ishlab chiqaramiz.',viewProducts:'Mahsulotlarni ko‘rish →',aboutBtn:'Kompaniya haqida',years:'bozorda yil',types:'mahsulot turi',clients:'mamnun mijozlar',assortment:'Bizning assortiment',productsTitle:'Mahsulotlar',productsLead:'Maishiy kimyo, kosmetika va boshqa mahsulotlar ishlab chiqaruvchilar uchun amaliy va estetik yechimlar.',catPet:'PET idishlar',catPetDesc:'Turli shakl va hajmdagi butilkalar, bankalar va flakonlar',catCaps:'Qopqoqlar',catCapsDesc:'Har qanday vazifa uchun ishonchli yechimlar',catPumps:'Dozatorlar',catPumpsDesc:'Qulaylik va funksionallik',catTriggers:'Triggerlar',catTriggersDesc:'Maishiy va professional kimyo uchun',catCanisters:'Kanistrlar',catCanistersDesc:'Saqlash va tashish uchun',aboutEyebrow:'Kompaniya haqida',moreThan:'Oddiy qadoqdan',packaging:'ko‘proq',aboutText:'KAFOLAT PLAST zamonaviy texnologiyalar, sifat nazorati va amaliy dizaynni birlashtirib, ishonchli plastik mahsulotlar yaratadi.',discuss:'Loyihani muhokama qilish →',feature1:'Yuqori sifat',feature1d:'Ishlab chiqarishning har bir bosqichida sifat nazorati.',feature2:'Zamonaviy texnologiyalar',feature2d:'Barqaror natija uchun uskunalar va ishlab chiqarish jarayonlari.',feature3:'Individual yechimlar',feature3d:'Mijoz vazifasiga mos shakl, rang va butlovchi qismlarni tanlash.',feature4:'Uzoq muddatli hamkorlik',feature4d:'Sifat, muddatlar va hamkorlar ehtiyojlariga e’tibor qaratamiz.',contactEyebrow:'Hamkorlikni boshlaymiz',contactTitle1:'Mahsulotingiz uchun',contactTitle2:'qadoq yaratamiz.',writeUs:'Bizga yozing ↗',copyright:'© 2026 KAFOLAT PLAST. Barcha huquqlar himoyalangan.'},
-    en: {navHome:'Home',navAbout:'About us',navProducts:'Products',navAdvantages:'Advantages',navContacts:'Contacts',contactBtn:'Contact us',eyebrow:'Plastic solutions for business',h1a:'Quality',h1b:'in every',h1c:'detail',lead:'We manufacture plastic packaging and components for household chemicals, cosmetics, food and other industries.',viewProducts:'View products →',aboutBtn:'About us',years:'years in the market',types:'product types',clients:'happy clients',assortment:'Our assortment',productsTitle:'Products',productsLead:'Practical and aesthetic solutions for manufacturers of household chemicals, cosmetics and other goods.',catPet:'PET packaging',catPetDesc:'Bottles, jars and containers of various shapes and volumes',catCaps:'Caps',catCapsDesc:'Reliable solutions for every task',catPumps:'Dispensers',catPumpsDesc:'Convenience and functionality',catTriggers:'Triggers',catTriggersDesc:'For household and professional chemicals',catCanisters:'Canisters',catCanistersDesc:'For storage and transportation',aboutEyebrow:'About us',moreThan:'More than',packaging:'packaging',aboutText:'KAFOLAT PLAST combines modern technologies, quality control and practical design to create trusted plastic products.',discuss:'Discuss a project →',feature1:'High quality',feature1d:'Quality control at every stage of production.',feature2:'Modern technologies',feature2d:'Equipment and production processes for consistent results.',feature3:'Custom solutions',feature3d:'Selection of shapes, colors and components for each client’s needs.',feature4:'Long-term partnership',feature4d:'We focus on quality, deadlines and our partners’ needs.',contactEyebrow:'Let’s work together',contactTitle1:'We will create packaging',contactTitle2:'for your product.',writeUs:'Write to us ↗',copyright:'© 2026 KAFOLAT PLAST. All rights reserved.'}
+    ru: {navHome:'Главная',navAbout:'О компании',navProducts:'Продукция',navAdvantages:'Преимущества',navContacts:'Контакты',contactBtn:'Связаться ↗',eyebrow:'Пластиковые решения для бизнеса',h1a:'Качество',h1b:'в каждой',h1c:'детали',lead:'Производим пластиковую тару и комплектующие для бытовой химии, косметики, пищевой и других отраслей.',viewProducts:'Смотреть продукцию →',aboutBtn:'О компании',years:'лет на рынке',types:'видов продукции',clients:'довольных клиентов',assortment:'Наш ассортимент',productsTitle:'Продукция',productsLead:'Практичные и эстетичные решения для производителей бытовой химии, косметики и других товаров.',catPet:'ПЭТ тара',catPetDesc:'Бутылки, банки, флаконы разных форм и объёмов',catCaps:'Крышки',catCapsDesc:'Надёжные решения для любых задач',catPumps:'Дозаторы',catPumpsDesc:'Удобство и функциональность',catTriggers:'Триггеры',catTriggersDesc:'Для бытовой и профессиональной химии',catCanisters:'Канистры',catCanistersDesc:'Для хранения и транспортировки',aboutEyebrow:'О компании',moreThan:'Больше, чем',packaging:'упаковка',aboutText:'KAFOLAT PLAST объединяет современные технологии, контроль качества и практичный дизайн, чтобы создавать пластиковые изделия, которым доверяют.',discuss:'Обсудить проект →',feature1:'Высокое качество',feature1d:'Контроль качества на каждом этапе производства.',feature2:'Современные технологии',feature2d:'Оборудование и производственные процессы для стабильного результата.',feature3:'Индивидуальные решения',feature3d:'Подбор формы, цвета и комплектующих под задачу клиента.',feature4:'Долгосрочное сотрудничество',feature4d:'Ориентируемся на качество, сроки и потребности партнёров.',contactEyebrow:'Начнём сотрудничество',contactTitle1:'Создадим упаковку',contactTitle2:'для вашего продукта.',writeUs:'Написать нам ↗',copyright:'© 2026 KAFOLAT PLAST. Все права защищены.'},
+    uz: {navHome:'Bosh sahifa',navAbout:'Kompaniya haqida',navProducts:'Mahsulotlar',navAdvantages:'Afzalliklar',navContacts:'Aloqa',contactBtn:'Bog‘lanish ↗',eyebrow:'Biznes uchun plastik yechimlar',h1a:'Har bir',h1b:'detalda',h1c:'sifat',lead:'Maishiy kimyo, kosmetika, oziq-ovqat va boshqa sohalar uchun plastik idishlar hamda butlovchi qismlar ishlab chiqaramiz.',viewProducts:'Mahsulotlarni ko‘rish →',aboutBtn:'Kompaniya haqida',years:'bozorda yil',types:'mahsulot turi',clients:'mamnun mijozlar',assortment:'Bizning assortiment',productsTitle:'Mahsulotlar',productsLead:'Maishiy kimyo, kosmetika va boshqa mahsulotlar ishlab chiqaruvchilar uchun amaliy va estetik yechimlar.',catPet:'PET idishlar',catPetDesc:'Turli shakl va hajmdagi butilkalar, bankalar va flakonlar',catCaps:'Qopqoqlar',catCapsDesc:'Har qanday vazifa uchun ishonchli yechimlar',catPumps:'Dozatorlar',catPumpsDesc:'Qulaylik va funksionallik',catTriggers:'Triggerlar',catTriggersDesc:'Maishiy va professional kimyo uchun',catCanisters:'Kanistrlar',catCanistersDesc:'Saqlash va tashish uchun',aboutEyebrow:'Kompaniya haqida',moreThan:'Oddiy qadoqdan',packaging:'ko‘proq',aboutText:'KAFOLAT PLAST zamonaviy texnologiyalar, sifat nazorati va amaliy dizaynni birlashtirib, ishonchli plastik mahsulotlar yaratadi.',discuss:'Loyihani muhokama qilish →',feature1:'Yuqori sifat',feature1d:'Ishlab chiqarishning har bir bosqichida sifat nazorati.',feature2:'Zamonaviy texnologiyalar',feature2d:'Barqaror natija uchun uskunalar va ishlab chiqarish jarayonlari.',feature3:'Individual yechimlar',feature3d:'Mijoz vazifasiga mos shakl, rang va butlovchi qismlarni tanlash.',feature4:'Uzoq muddatli hamkorlik',feature4d:'Sifat, muddatlar va hamkorlar ehtiyojlariga e’tibor qaratamiz.',contactEyebrow:'Hamkorlikni boshlaymiz',contactTitle1:'Mahsulotingiz uchun',contactTitle2:'qadoq yaratamiz.',writeUs:'Bizga yozing ↗',copyright:'© 2026 KAFOLAT PLAST. Barcha huquqlar himoyalangan.'},
+    en: {navHome:'Home',navAbout:'About us',navProducts:'Products',navAdvantages:'Advantages',navContacts:'Contacts',contactBtn:'Contact us ↗',eyebrow:'Plastic solutions for business',h1a:'Quality',h1b:'in every',h1c:'detail',lead:'We manufacture plastic packaging and components for household chemicals, cosmetics, food and other industries.',viewProducts:'View products →',aboutBtn:'About us',years:'years in the market',types:'product types',clients:'happy clients',assortment:'Our assortment',productsTitle:'Products',productsLead:'Practical and aesthetic solutions for manufacturers of household chemicals, cosmetics and other goods.',catPet:'PET packaging',catPetDesc:'Bottles, jars and containers of various shapes and volumes',catCaps:'Caps',catCapsDesc:'Reliable solutions for every task',catPumps:'Dispensers',catPumpsDesc:'Convenience and functionality',catTriggers:'Triggers',catTriggersDesc:'For household and professional chemicals',catCanisters:'Canisters',catCanistersDesc:'For storage and transportation',aboutEyebrow:'About us',moreThan:'More than',packaging:'packaging',aboutText:'KAFOLAT PLAST combines modern technologies, quality control and practical design to create trusted plastic products.',discuss:'Discuss a project →',feature1:'High quality',feature1d:'Quality control at every stage of production.',feature2:'Modern technologies',feature2d:'Equipment and production processes for consistent results.',feature3:'Custom solutions',feature3d:'Selection of shapes, colors and components for each client’s needs.',feature4:'Long-term partnership',feature4d:'We focus on quality, deadlines and our partners’ needs.',contactEyebrow:'Let’s work together',contactTitle1:'We will create packaging',contactTitle2:'for your product.',writeUs:'Write to us ↗',copyright:'© 2026 KAFOLAT PLAST. All rights reserved.'}
   };
   function setLanguage(lang){ const dict=translations[lang]||translations.ru; document.documentElement.lang=lang; document.querySelectorAll('[data-i18n]').forEach(el=>{ if(dict[el.dataset.i18n]!==undefined) el.textContent=dict[el.dataset.i18n]; }); document.getElementById('pageTitle').textContent=lang==='en'?'KAFOLAT PLAST — Plastic solutions':lang==='uz'?'KAFOLAT PLAST — Plastik yechimlar':'KAFOLAT PLAST — Пластиковые решения'; document.getElementById('pageDescription').content=dict.lead; localStorage.setItem('kafolat-lang',lang); }
-  const menuToggle=document.getElementById('menuToggle'); const mobileNav=document.getElementById('mobileNav');
-  menuToggle.addEventListener('click',()=>{ const open=mobileNav.classList.toggle('open'); menuToggle.setAttribute('aria-expanded',String(open)); menuToggle.setAttribute('aria-label',open?'Закрыть меню':'Открыть меню'); menuToggle.innerHTML=open?'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>':'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>'; });
-  mobileNav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{mobileNav.classList.remove('open');menuToggle.setAttribute('aria-expanded','false');menuToggle.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>';}));
   const select=document.getElementById('languageSelect');
-  const modal=document.getElementById('languageModal');
-  const modalButtons=[...document.querySelectorAll('[data-modal-lang]')];
-  const saved=localStorage.getItem('kafolat-lang');
-  const initialLanguage=saved||'ru';
-  select.value=initialLanguage;
-  setLanguage(initialLanguage);
-  select.addEventListener('change',()=>setLanguage(select.value));
-  function closeLanguageModal(){ modal.classList.add('hidden'); document.body.classList.remove('modal-open'); }
-  if(saved){ closeLanguageModal(); }
-  modalButtons.forEach(button=>button.addEventListener('click',()=>{
-    const lang=button.dataset.modalLang;
-    select.value=lang;
-    setLanguage(lang);
-    closeLanguageModal();
-  }));
+  const saved=localStorage.getItem('kafolat-lang')||'ru'; select.value=saved; setLanguage(saved); select.addEventListener('change',()=>setLanguage(select.value));
 })();
 </script>
 <script>
