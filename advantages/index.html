@@ -1,54 +1,18 @@
-<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Преимущества — KAFOLAT PLAST</title><link rel="stylesheet" href="../shared.css?v=2"></head><body><header class="site-header">
-  <div class="container nav">
-    <a class="brand" href="../">
-      <img src="../assets/logo.png" alt="KAFOLAT PLAST">
-      <span class="brand-kafolat">KAFOLAT</span><span class="brand-plast">PLAST</span>
-    </a>
-    <nav class="navlinks">
-      <a href="../" data-ru="Главная" data-uz="Bosh sahifa" data-en="Home">Главная</a>
-      <a href="../about/" data-ru="О компании" data-uz="Kompaniya haqida" data-en="About us">О компании</a>
-      <a href="../productions/" data-ru="Продукция" data-uz="Mahsulotlar" data-en="Products">Продукция</a>
-      <a href="../advantages/" data-ru="Преимущества" data-uz="Afzalliklar" data-en="Advantages">Преимущества</a>
-      <a href="../contacts/" data-ru="Контакты" data-uz="Aloqa" data-en="Contacts">Контакты</a>
-    </nav>
-    <div class="actions">
-      <a class="btn primary" href="../contacts/" data-ru="Связаться" data-uz="Bog‘lanish" data-en="Contact us">Связаться</a>
-      <button class="menu" id="menuToggle" type="button" aria-label="Открыть меню" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"></path></svg></button>
-    </div>
-  </div>
-  <nav class="mobile-nav" id="mobileNav">
-    <a href="../" data-ru="Главная" data-uz="Bosh sahifa" data-en="Home">Главная</a>
-    <a href="../about/" data-ru="О компании" data-uz="Kompaniya haqida" data-en="About us">О компании</a>
-    <a href="../productions/" data-ru="Продукция" data-uz="Mahsulotlar" data-en="Products">Продукция</a>
-    <a href="../advantages/" data-ru="Преимущества" data-uz="Afzalliklar" data-en="Advantages">Преимущества</a>
-    <a href="../contacts/" data-ru="Контакты" data-uz="Aloqa" data-en="Contacts">Контакты</a>
-  </nav>
-</header><main><section class="page-hero"><div class="container"><div class="eyebrow">KAFOLAT PLAST / ADVANTAGES</div><h1><span>Качество</span><br>в каждой<br>детали.</h1><p data-ru="Системный подход к качеству, гибкость производства и внимание к деталям на каждом этапе." data-en="A systematic approach to quality, flexible production and attention to detail at every stage." data-uz="Sifatga tizimli yondashuv, moslashuvchan ishlab chiqarish va har bir bosqichda tafsilotlarga e’tibor.">Системный подход к качеству, гибкость производства и внимание к деталям на каждом этапе.</p></div></section><section class="section"><div class="container"><div class="grid"><div class="card"><div class="iconbox">✓</div><h3>Контроль качества</h3><p>Проверяем сырьё, геометрию, внешний вид и стабильность изделий.</p></div><div class="card"><div class="iconbox">↗</div><h3>Гибкость</h3><p>Подбираем решения под разные объёмы, форматы и требования рынка.</p></div><div class="card"><div class="iconbox">◈</div><h3>Современный подход</h3><p>Соединяем технологичность, практичность и аккуратный внешний вид.</p></div><div class="card"><div class="iconbox">◎</div><h3>Сроки</h3><p>Планируем производство и держим фокус на согласованных сроках.</p></div><div class="card"><div class="iconbox">＋</div><h3>Индивидуальность</h3><p>Помогаем подобрать форму, цвет и комплектующие под ваш бренд.</p></div><div class="card"><div class="iconbox">∞</div><h3>Партнёрство</h3><p>Строим долгосрочные отношения и поддерживаем клиента на каждом этапе.</p></div></div></div></section></main><footer class="footer"><div class="container footerrow"><span>© 2026 KAFOLAT PLAST. Все права защищены.</span><span>Пластиковые решения для бизнеса</span></div></footer><script>
-(function(){
-  const menu=document.getElementById('menuToggle');
-  const mobile=document.getElementById('mobileNav');
-  let lang=localStorage.getItem('kafolat-lang')||'ru';
-  function applyLang(){
-    document.documentElement.lang=lang;
-    document.querySelectorAll('[data-ru]').forEach(el=>{el.textContent=el.dataset[lang]||el.dataset.ru;});
-    const titles = {
-      ru: 'О компании — KAFOLAT PLAST',
-      uz: 'Kompaniya haqida — KAFOLAT PLAST',
-      en: 'About us — KAFOLAT PLAST'
-    };
-    if (document.title) {
-      const path = location.pathname;
-      const titleMap = path.includes('/productions/') ? {
-        ru: 'Продукция — KAFOLAT PLAST', uz: 'Mahsulotlar — KAFOLAT PLAST', en: 'Products — KAFOLAT PLAST'
-      } : path.includes('/advantages/') ? {
-        ru: 'Преимущества — KAFOLAT PLAST', uz: 'Afzalliklar — KAFOLAT PLAST', en: 'Advantages — KAFOLAT PLAST'
-      } : path.includes('/contacts/') ? {
-        ru: 'Контакты — KAFOLAT PLAST', uz: 'Aloqa — KAFOLAT PLAST', en: 'Contacts — KAFOLAT PLAST'
-      } : titles;
-      document.title = titleMap[lang] || titleMap.ru;
-    }
-  }
-  if(menu&&mobile){menu.addEventListener('click',()=>{const open=mobile.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));});}
-  applyLang();
-})();
-</script></body></html>
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Преимущества — KAFOLAT PLAST</title><link rel="stylesheet" href="../shared.css?v=3"></head><body><header class="site-header"><div class="container nav">
+<a class="brand" href="../"><img src="../assets/logo.png" alt="KAFOLAT PLAST"><span class="brand-kafolat">KAFOLAT</span><span class="brand-plast">PLAST</span></a>
+<nav class="navlinks">
+<a href="../" data-ru="Главная" data-uz="Bosh sahifa" data-en="Home">Главная</a>
+<a href="../about/" data-ru="О компании" data-uz="Kompaniya haqida" data-en="About us">О компании</a>
+<a href="../productions/" data-ru="Продукция" data-uz="Mahsulotlar" data-en="Products">Продукция</a>
+<a href="../advantages/" data-ru="Преимущества" data-uz="Afzalliklar" data-en="Advantages">Преимущества</a>
+<a href="../contacts/" data-ru="Контакты" data-uz="Aloqa" data-en="Contacts">Контакты</a>
+</nav><div class="actions"><a class="btn primary" href="../contacts/" data-ru="Связаться" data-uz="Bog‘lanish" data-en="Contact us">Связаться</a>
+<button class="menu" id="menuToggle" type="button" aria-label="Menu" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"></path></svg></button></div></div>
+<nav class="mobile-nav" id="mobileNav"><a href="../" data-ru="Главная" data-uz="Bosh sahifa" data-en="Home">Главная</a><a href="../about/" data-ru="О компании" data-uz="Kompaniya haqida" data-en="About us">О компании</a><a href="../productions/" data-ru="Продукция" data-uz="Mahsulotlar" data-en="Products">Продукция</a><a href="../advantages/" data-ru="Преимущества" data-uz="Afzalliklar" data-en="Advantages">Преимущества</a><a href="../contacts/" data-ru="Контакты" data-uz="Aloqa" data-en="Contacts">Контакты</a></nav></header><main><section class="page-hero"><div class="container"><div class="eyebrow" data-ru="KAFOLAT PLAST / ПРЕИМУЩЕСТВА" data-uz="KAFOLAT PLAST / AFZALLIKLAR" data-en="KAFOLAT PLAST / ADVANTAGES">KAFOLAT PLAST / ПРЕИМУЩЕСТВА</div><h1 data-i18n-html data-ru-html="<span>Качество</span><br>в каждой<br>детали." data-uz-html="<span>Sifat</span><br>har bir<br>detalda." data-en-html="<span>Quality</span><br>in every<br>detail."><span>Качество</span><br>в каждой<br>детали.</h1><p data-ru="Системный подход к качеству, гибкость производства и внимание к деталям на каждом этапе." data-uz="Sifatga tizimli yondashuv, moslashuvchan ishlab chiqarish va har bir bosqichda tafsilotlarga e’tibor." data-en="A systematic approach to quality, flexible production and attention to detail at every stage.">Системный подход к качеству, гибкость производства и внимание к деталям на каждом этапе.</p></div></section><section class="section"><div class="container"><div class="grid">
+<div class="card"><div class="iconbox">✓</div><h3 data-ru="Контроль качества" data-uz="Sifat nazorati" data-en="Quality control">Контроль качества</h3><p data-ru="Проверяем сырьё, геометрию, внешний вид и стабильность изделий." data-uz="Xomashyo, geometriya, tashqi ko‘rinish va mahsulot barqarorligini tekshiramiz." data-en="We check raw materials, geometry, appearance and product consistency.">Проверяем сырьё, геометрию, внешний вид и стабильность изделий.</p></div>
+<div class="card"><div class="iconbox">↗</div><h3 data-ru="Гибкость" data-uz="Moslashuvchanlik" data-en="Flexibility">Гибкость</h3><p data-ru="Подбираем решения под разные объёмы, форматы и требования рынка." data-uz="Turli hajm, format va bozor talablariga mos yechimlarni tanlaymiz." data-en="We tailor solutions to different volumes, formats and market requirements.">Подбираем решения под разные объёмы, форматы и требования рынка.</p></div>
+<div class="card"><div class="iconbox">◈</div><h3 data-ru="Современный подход" data-uz="Zamonaviy yondashuv" data-en="Modern approach">Современный подход</h3><p data-ru="Соединяем технологичность, практичность и аккуратный внешний вид." data-uz="Texnologiya, amaliylik va chiroyli tashqi ko‘rinishni birlashtiramiz." data-en="We combine technology, practicality and a clean appearance.">Соединяем технологичность, практичность и аккуратный внешний вид.</p></div>
+<div class="card"><div class="iconbox">◎</div><h3 data-ru="Сроки" data-uz="Muddatlar" data-en="Timelines">Сроки</h3><p data-ru="Планируем производство и держим фокус на согласованных сроках." data-uz="Ishlab chiqarishni rejalashtirib, kelishilgan muddatlarga amal qilamiz." data-en="We plan production and stay focused on agreed deadlines.">Планируем производство и держим фокус на согласованных сроках.</p></div>
+<div class="card"><div class="iconbox">＋</div><h3 data-ru="Индивидуальность" data-uz="Individuallik" data-en="Customization">Индивидуальность</h3><p data-ru="Помогаем подобрать форму, цвет и комплектующие под ваш бренд." data-uz="Brendingiz uchun shakl, rang va butlovchi qismlarni tanlashga yordam beramiz." data-en="We help select shapes, colors and components for your brand.">Помогаем подобрать форму, цвет и комплектующие под ваш бренд.</p></div>
+<div class="card"><div class="iconbox">∞</div><h3 data-ru="Партнёрство" data-uz="Hamkorlik" data-en="Partnership">Партнёрство</h3><p data-ru="Строим долгосрочные отношения и поддерживаем клиента на каждом этапе." data-uz="Uzoq muddatli munosabatlar o‘rnatib, mijozni har bir bosqichda qo‘llab-quvvatlaymiz." data-en="We build long-term relationships and support clients at every stage.">Строим долгосрочные отношения и поддерживаем клиента на каждом этапе.</p></div>
+</div></div></section></main><footer class="footer"><div class="container footerrow"><span data-ru="© 2026 KAFOLAT PLAST. Все права защищены." data-uz="© 2026 KAFOLAT PLAST. Barcha huquqlar himoyalangan." data-en="© 2026 KAFOLAT PLAST. All rights reserved.">© 2026 KAFOLAT PLAST. Все права защищены.</span><span data-ru="Пластиковые решения для бизнеса" data-uz="Biznes uchun plastik yechimlar" data-en="Plastic solutions for business">Пластиковые решения для бизнеса</span></div></footer><script>(function(){const menu=document.getElementById("menuToggle"),mobile=document.getElementById("mobileNav");let lang=localStorage.getItem("kafolat-lang")||"ru";document.documentElement.lang=lang;document.querySelectorAll("[data-ru]").forEach(e=>e.textContent=e.dataset[lang]||e.dataset.ru);document.querySelectorAll("[data-i18n-html]").forEach(e=>{let v=e.getAttribute("data-"+lang+"-html");if(v!==null)e.innerHTML=v;});document.querySelectorAll("[data-i18n-title]").forEach(e=>{let v=e.getAttribute("data-title-"+lang);if(v)e.textContent=v;});if(menu&&mobile)menu.addEventListener("click",()=>{let o=mobile.classList.toggle("open");menu.setAttribute("aria-expanded",String(o));});})();</script></body></html>
