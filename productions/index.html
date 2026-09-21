@@ -1,27 +1,4 @@
 <!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Продукция — KAFOLAT PLAST</title><link rel="stylesheet" href="../shared.css?v=3">
-<style>
-.language-switcher{display:flex;gap:6px;align-items:center;margin-left:12px}
-.lang-btn{border:1px solid #ddd;background:#fff;border-radius:999px;padding:7px 10px;font-size:12px;cursor:pointer}
-.lang-btn.active{background:#d71920;color:#fff;border-color:#d71920}
-@media(max-width:700px){.language-switcher{gap:3px;margin-left:6px}.lang-btn{padding:6px 7px;font-size:10px}}
-</style>
-<script>
-(function(){
-  const key='kafolat-lang';
-  const setLang=(lang)=>{
-    localStorage.setItem(key,lang);
-    document.querySelectorAll('[data-lang]').forEach(b=>b.classList.toggle('active',b.dataset.lang===lang));
-    document.documentElement.lang=lang;
-    window.dispatchEvent(new CustomEvent('languagechange',{detail:lang}));
-  };
-  document.addEventListener('DOMContentLoaded',()=>{
-    const lang=localStorage.getItem(key)||'ru';
-    setLang(lang);
-    document.querySelectorAll('.lang-btn').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
-  });
-})();
-</script>
-
 </head><body><header class="site-header"><div class="container nav">
 <a class="brand" href="../"><img src="../assets/logo.png" alt="KAFOLAT PLAST"><span class="brand-kafolat">KAFOLAT</span><span class="brand-plast">PLAST</span></a>
 <nav class="navlinks">
@@ -33,12 +10,6 @@
 </nav><div class="actions"><a class="btn primary contact-btn" href="../contacts/" data-title-ru="Связаться" data-title-uz="Bog‘lanish" data-title-en="Contact us" title="Связаться"><span class="contact-label" data-ru="Связаться" data-uz="Bog‘lanish" data-en="Contact us">Связаться</span><svg class="contact-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.2 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.63a2 2 0 0 1-.45 2.11L8 9.73a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.85.29 1.73.5 2.63.62A2 2 0 0 1 22 16.92Z"></path></svg></a>
 <button class="menu" id="menuToggle" type="button" aria-label="Menu" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"></path></svg></button></div></div>
 <nav class="mobile-nav" id="mobileNav"><a href="../" data-ru="Главная" data-uz="Bosh sahifa" data-en="Home">Главная</a><a href="../about/" data-ru="О компании" data-uz="Kompaniya haqida" data-en="About us">О компании</a><a href="../productions/" data-ru="Продукция" data-uz="Mahsulotlar" data-en="Products">Продукция</a><a href="../advantages/" data-ru="Преимущества" data-uz="Afzalliklar" data-en="Advantages">Преимущества</a><a href="../contacts/" data-ru="Контакты" data-uz="Aloqa" data-en="Contacts">Контакты</a></nav>
-<div class="language-switcher" aria-label="Выбор языка">
-  <button type="button" class="lang-btn" data-lang="ru">RU</button>
-  <button type="button" class="lang-btn" data-lang="uz">UZ</button>
-  <button type="button" class="lang-btn" data-lang="en">EN</button>
-</div>
-
 </header><main><section class="page-hero"><div class="container"><div class="eyebrow" data-ru="KAFOLAT PLAST / ПРОДУКЦИЯ" data-uz="KAFOLAT PLAST / MAHSULOTLAR" data-en="KAFOLAT PLAST / PRODUCTS">KAFOLAT PLAST / ПРОДУКЦИЯ</div><h1 data-i18n-html data-ru-html="<span>Форма.</span><br>Функция.<br>Результат." data-uz-html="<span>Shakl.</span><br>Funksiya.<br>Natija." data-en-html="<span>Form.</span><br>Function.<br>Result."><span>Форма.</span><br>Функция.<br>Результат.</h1><p data-ru="Пластиковая тара и комплектующие для бытовой химии, косметики, пищевой промышленности и других отраслей." data-uz="Maishiy kimyo, kosmetika, oziq-ovqat va boshqa sohalar uchun plastik idishlar va butlovchi qismlar." data-en="Plastic packaging and components for household chemicals, cosmetics, food and other industries.">Пластиковая тара и комплектующие для бытовой химии, косметики, пищевой промышленности и других отраслей.</p></div></section>
 <section class="section"><div class="container"><div class="section-head"><div><div class="eyebrow" data-ru="НАШ АССОРТИМЕНТ" data-uz="BIZNING ASSORTIMENT" data-en="OUR ASSORTMENT">НАШ АССОРТИМЕНТ</div><h2 data-i18n-html data-ru-html="Категории<br>продукции." data-uz-html="Mahsulot<br>toifalari." data-en-html="Product<br>categories.">Категории<br>продукции.</h2></div><p data-ru="Выбирайте готовые решения или обсудите индивидуальную конфигурацию с нашей командой." data-uz="Tayyor yechimlarni tanlang yoki individual konfiguratsiyani jamoamiz bilan muhokama qiling." data-en="Choose ready-made solutions or discuss a custom configuration with our team.">Выбирайте готовые решения или обсудите индивидуальную конфигурацию с нашей командой.</p></div>
 <div class="product-grid">
