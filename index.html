@@ -72,9 +72,9 @@
     .carousel-item { position:absolute; left:50%; top:50%; width:290px; height:500px; display:flex; align-items:center; justify-content:center; --base-x:0px; --drag-x:0px; --angle:0deg; --depth:0px; --item-scale:1; --drag-scale:1; --face-scale:1; transform:translate3d(calc(-50% + var(--base-x) + var(--drag-x)), -50%, var(--depth)) rotateY(0deg) scale(calc(var(--item-scale) * var(--drag-scale))); transform-origin:center center; transition:transform 1.55s cubic-bezier(.16,1,.3,1), opacity 1.35s cubic-bezier(.16,1,.3,1), filter 1.35s ease; will-change:transform,opacity; pointer-events:none; backface-visibility:hidden; }
     .carousel-item img { width:100%; height:100%; object-fit:contain; mix-blend-mode:multiply; filter:drop-shadow(0 24px 24px rgba(0,0,0,.12)); transition:filter .8s ease; }
     .carousel-item[data-position="0"] { z-index:10; opacity:1; filter:none; }
-    .carousel-item[data-position="-1"], .carousel-item[data-position="1"] { z-index:7; opacity:.72; filter:saturate(.85); }
-    .carousel-item[data-position="-2"], .carousel-item[data-position="2"] { z-index:5; opacity:.38; filter:blur(.2px) saturate(.7); }
-    .carousel-item[data-position="-3"], .carousel-item[data-position="3"] { z-index:3; opacity:.14; filter:blur(.5px) saturate(.6); }
+    .carousel-item[data-position="-1"], .carousel-item[data-position="1"] { z-index:7; opacity:.86; filter:saturate(.9); }
+    .carousel-item[data-position="-2"], .carousel-item[data-position="2"] { z-index:5; opacity:.62; filter:blur(.2px) saturate(.8); }
+    .carousel-item[data-position="-3"], .carousel-item[data-position="3"] { z-index:3; opacity:.38; filter:blur(.5px) saturate(.7); }
     .carousel-item.is-hidden { opacity:0; z-index:0; }
     .product-carousel.is-dragging .carousel-item { transition:none !important; }
     .carousel-dots { position:absolute; left:50%; bottom:8px; transform:translateX(-50%); display:flex; gap:7px; z-index:20; }
@@ -274,7 +274,7 @@
     </div>
     <div class="categories">
       <a class="category" href="contacts/"><h3 data-i18n="catPet">ПЭТ тара</h3><p data-i18n="catPetDesc">Бутылки, банки, флаконы разных форм и объёмов</p><span class="circle-arrow">↗</span><img src="assets/red-bottle.png" alt=""></a>
-      <a class="category" href="contacts/"><h3 data-i18n="catCaps">Крышки</h3><p data-i18n="catCapsDesc">Надёжные решения для любых задач</p><span class="circle-arrow">↗</span><img src="assets/pump-line.png" alt=""></a>
+      <a class="category" href="contacts/"><h3 data-i18n="catCaps">Крышки</h3><p data-i18n="catCapsDesc">Надёжные решения для любых задач</p><span class="circle-arrow">↗</span><img src="assets/cup.png" alt=""></a>
       <a class="category" href="contacts/"><h3 data-i18n="catPumps">Дозаторы</h3><p data-i18n="catPumpsDesc">Удобство и функциональность</p><span class="circle-arrow">↗</span><img src="assets/dispenser.png" alt=""></a>
       <a class="category" href="contacts/"><h3 data-i18n="catTriggers">Триггеры</h3><p data-i18n="catTriggersDesc">Для бытовой и профессиональной химии</p><span class="circle-arrow">↗</span><img src="assets/triggers.png" alt=""></a>
       <a class="category" href="contacts/"><h3 data-i18n="catCanisters">Канистры</h3><p data-i18n="catCanistersDesc">Для хранения и транспортировки</p><span class="circle-arrow">↗</span><img src="assets/canister.png" alt=""></a>
@@ -371,11 +371,19 @@
       item.dataset.position = position;
       item.classList.toggle('is-hidden', Math.abs(position) > 3);
       const isMobile = window.innerWidth <= 600;
-      const step = isMobile ? 118 : 218;
-      const scales = { '-3': 0.10, '-2': 0.17, '-1': 0.31, '0': 1, '1': 0.31, '2': 0.17, '3': 0.10 };
+      const step = isMobile ? 82 : 145;
+      const scales = {
+        '-3': 0.7,
+        '-2': 0.7,
+        '-1': 0.7,
+        '0': 1,
+        '1': 0.7,
+        '2': 0.7,
+        '3': 0.7
+      };
       const scale = scales[String(position)] ?? 0.12;
       const angle = 0;
-      const extra = Math.abs(position) > 1 ? (position < 0 ? -24 : 24) : 0;
+      const extra = Math.abs(position) > 1 ? (position < 0 ? -8 : 8) : 0;
       item.style.setProperty('--base-x', `${position * step + extra}px`);
       item.style.setProperty('--item-scale', scale);
       item.style.setProperty('--angle', `${angle}deg`);
